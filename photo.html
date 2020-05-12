@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+
+	<title></title>
+	<style>
+	#wrapper {
+			width: 400px;
+			height: 500px;
+			position: relative;
+			overflow:hidden;
+			transition:all ease .2s;
+			margin:100px auto;
+		}
+
+		#first, #second {
+			position: absolute;
+			width: 400px;
+			height: 500px;
+			top: 0;
+			left: 0;
+		}
+		#second{
+	background-image:url(Слой%203.png);
+		}
+
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="first"><img src="Слой%201.png" /></div>
+	<div id="second"></div>
+</div>
+
+
+<script>
+	document.getElementById('wrapper').onmousemove = function(event) {
+		let x = event.offsetX;
+		document.getElementById('second').style.width = x + 'px';
+
+		document.getElementById('wrapper').onmouseleave = function(event) {
+	document.getElementById('second').style.width = 400 + 'px';
+		}
+	}
+</script>
+</body>
+</html>
